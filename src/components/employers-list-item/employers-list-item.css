@@ -32,10 +32,12 @@
 
 .list-group-item .btn-cookie {
     color: #e09f3e;
+    cursor: pointer;
 }
 
 .list-group-item .btn-trash {
     color: #e5383b;
+    cursor: pointer;
 }
 
 .list-group-item .fa-star {

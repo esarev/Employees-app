@@ -1,8 +1,8 @@
 import AppInfo from '../app-info/app-info';
 import SearchPanel from '../search-panel/search-panel';
 import AppFilter from '../app-filter/app-filter';
-import EmployeesList from '../employees-list/employees-list';
-import EmployeesAddForm from '../employees-add-form/employees-add-form';
+import EmployersList from '../employers-list/employers-list';
+import EmployersAddForm from '../employers-add-form/employers-add-form';
 
 import './app.css';
 
@@ -16,8 +16,8 @@ function App() {
             <AppFilter/>
         </div>
         
-        <EmployeesList/>
-        <EmployeesAddForm/>
+        <EmployersList/>
+        <EmployersAddForm/>
     </div>
   );
 }
