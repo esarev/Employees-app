@@ -7,7 +7,7 @@ class EmployersAddForm extends Component {
         super(props);
         this.state = {
             name: '',
-            salary: ''
+            salary: ''            
         } 
     }
 
@@ -19,15 +19,31 @@ class EmployersAddForm extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.onAdd(this.state.name, this.state.salary);
-        this.setState({
+
+        if(this.state.name.length >= 2 && this.state.salary !== '') {
+            this.props.onAdd(this.state.name, this.state.salary);
+            this.setState({
             name: '',
-            salary: ''
-        })
+            salary: '',
+            error: false
+            })
+        } else {
+            this.setState({
+                error: true
+            })
+        }
+
+        
     }
 
     render() {
-        const {name, salary} = this.state
+        const {name, salary, error} = this.state
+
+        let classNames = 'form-control new-post-label';
+
+        if(error) {
+            classNames += ' red';
+        }
 
         return (
             <div className="app-add-form">
