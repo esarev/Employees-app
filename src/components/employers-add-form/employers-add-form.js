@@ -25,25 +25,12 @@ class EmployersAddForm extends Component {
             this.setState({
             name: '',
             salary: '',
-            error: false
             })
-        } else {
-            this.setState({
-                error: true
-            })
-        }
-
-        
+        }  
     }
 
     render() {
-        const {name, salary, error} = this.state
-
-        let classNames = 'form-control new-post-label';
-
-        if(error) {
-            classNames += ' red';
-        }
+        const {name, salary} = this.state
 
         return (
             <div className="app-add-form">
@@ -56,13 +43,15 @@ class EmployersAddForm extends Component {
                         placeholder="Как его зовут?"
                         name='name'
                         value={name} 
-                        onChange={this.onValueChanges}/>
+                        onChange={this.onValueChanges}
+                        required/>
                     <input type="number"
                         className="form-control new-post-label"
                         placeholder="З/П в $?"
                         name='salary'
                         value={salary} 
-                        onChange={this.onValueChanges}/>
+                        onChange={this.onValueChanges}
+                        required/>
     
                     <button type="submit"
                             className="btn btn-outline-light">Добавить</button>
